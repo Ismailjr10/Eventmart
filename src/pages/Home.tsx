@@ -21,80 +21,94 @@ export function Home() {
   return (
     <div className="w-full bg-[#FAF9F6] text-slate-800">
       {/* Hero & Services Bento Grid */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          
-          {/* Hero Left Content */}
-          <div className="lg:col-span-5 flex flex-col justify-center space-y-6">
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="inline-block px-4 py-1 rounded-full bg-purple-50 text-purple-800 text-xs font-bold uppercase tracking-widest border border-purple-100 mb-2">
-                Event Solutions • Niger State
-              </div>
-            </motion.div>
-            
-            <motion.h1 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-5xl lg:text-6xl font-serif text-primary leading-tight"
-            >
-              Where Every Event <span className="text-secondary italic">Shines</span>
-            </motion.h1>
-            
-            <motion.p 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-lg text-slate-600 leading-relaxed max-w-md"
-            >
-              Your one-stop solution for stress-free events. From grand weddings to intimate gatherings, we manage every detail with elegance and precision.
-            </motion.p>
-            
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4 pt-4"
-            >
-              <Link to="/booking" className="bg-secondary text-white px-8 py-4 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all text-center">
-                Book Your Event
-              </Link>
-              <Link to="/services" className="border-2 border-primary text-primary px-8 py-4 rounded-xl font-bold hover:bg-purple-50 transition-all text-center">
-                Our Services
-              </Link>
-            </motion.div>
-          </div>
+      <section className="relative overflow-hidden pt-12 pb-16 md:pt-20 md:pb-24">
+        {/* Blurry Flower/Event Background */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2070&auto=format&fit=crop" 
+            alt="Flower Event Setup" 
+            className="w-full h-full object-cover opacity-50 blur-xl scale-110"
+            referrerPolicy="no-referrer"
+          />
+          {/* Gradient overlay to ensure text readability */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#FAF9F6]/95 via-[#FAF9F6]/80 to-[#FAF9F6]/40 backdrop-blur-[2px]"></div>
+        </div>
 
-          {/* Services Bento Grid */}
-          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {services.map((service, index) => {
-              const Icon = service.icon;
-              return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 + index * 0.1, duration: 0.5 }}
-                  className={`bento-item p-6 flex flex-col justify-between service-card ${
-                    service.dark ? 'bg-primary text-white shadow-lg' : 'bg-white shadow-sm'
-                  }`}
-                >
-                  <div className={`w-12 h-12 rounded-lg flex items-center justify-center mb-4 ${
-                    service.dark ? 'bg-white/10 text-secondary' : 'bg-purple-50 text-primary'
-                  }`}>
-                    <Icon className="w-6 h-6" />
-                  </div>
-                  <h3 className={`font-bold ${service.dark ? '' : 'text-primary'}`}>{service.title}</h3>
-                  <p className={`text-xs mt-2 ${service.dark ? 'text-purple-200' : 'text-slate-500'}`}>{service.description}</p>
-                </motion.div>
-              );
-            })}
-          </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            
+            {/* Hero Left Content */}
+            <div className="lg:col-span-5 flex flex-col justify-center space-y-6">
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8 }}
+              >
+                <div className="inline-block px-4 py-1 rounded-full bg-purple-50 text-purple-800 text-xs font-bold uppercase tracking-widest border border-purple-100 mb-2">
+                  Event Solutions • Niger State
+                </div>
+              </motion.div>
+              
+              <motion.h1 
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="text-5xl lg:text-6xl xl:text-7xl font-serif text-primary leading-tight py-2"
+              >
+                Where Every Event <span className="text-secondary italic">Shines</span>
+              </motion.h1>
+              
+              <motion.p 
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="text-lg text-slate-600 leading-relaxed max-w-md"
+              >
+                Your one-stop solution for stress-free events. From grand weddings to intimate gatherings, we manage every detail with elegance and precision.
+              </motion.p>
+              
+              <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                className="flex flex-col sm:flex-row gap-4 pt-4"
+              >
+                <Link to="/booking" className="bg-secondary text-white px-8 py-4 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all text-center">
+                  Book Your Event
+                </Link>
+                <Link to="/services" className="border-2 border-primary text-primary px-8 py-4 rounded-xl font-bold hover:bg-purple-50 transition-all text-center">
+                  Our Services
+                </Link>
+              </motion.div>
+            </div>
 
+            {/* Services Bento Grid */}
+            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              {services.map((service, index) => {
+                const Icon = service.icon;
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4 + index * 0.1, duration: 0.5 }}
+                    className={`bento-item p-6 flex flex-col justify-between service-card ${
+                      service.dark ? 'bg-primary text-white shadow-lg' : 'bg-white shadow-[0_4px_20px_rgb(0,0,0,0.05)]'
+                    }`}
+                  >
+                    <div className={`w-12 h-12 rounded-lg flex items-center justify-center mb-4 ${
+                      service.dark ? 'bg-white/10 text-secondary' : 'bg-purple-50 text-primary'
+                    }`}>
+                      <Icon className="w-6 h-6" />
+                    </div>
+                    <h3 className={`font-serif text-2xl mb-1 ${service.dark ? '' : 'text-primary'}`}>{service.title}</h3>
+                    <p className={`text-sm mt-2 ${service.dark ? 'text-purple-200' : 'text-slate-500'}`}>{service.description}</p>
+                  </motion.div>
+                );
+              })}
+            </div>
+
+          </div>
         </div>
       </section>
 
