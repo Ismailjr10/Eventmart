@@ -9,9 +9,7 @@ export function Footer() {
           {/* Brand */}
           <div className="space-y-6">
             <Link to="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
-                <span className="text-secondary font-serif text-2xl font-bold">E</span>
-              </div>
+              <img src="/logo.png.webp" alt="EventMart Logo" className="h-12 w-auto object-contain drop-shadow-md bg-white rounded-xl p-1" />
               <div className="flex flex-col">
                 <span className="font-serif text-2xl font-bold text-white leading-none tracking-tight">EventMart</span>
                 <span className="text-[0.6rem] font-medium tracking-widest text-accent uppercase">Where Every Event Shines</span>

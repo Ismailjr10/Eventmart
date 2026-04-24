@@ -25,13 +25,13 @@ export function Home() {
         {/* Blurry Flower/Event Background */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2070&auto=format&fit=crop" 
-            alt="Flower Event Setup" 
-            className="w-full h-full object-cover opacity-50 blur-xl scale-110"
+            src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2069&auto=format&fit=crop" 
+            alt="Beautiful Event Table Setup" 
+            className="w-full h-full object-cover opacity-70 blur-md scale-105"
             referrerPolicy="no-referrer"
           />
-          {/* Gradient overlay to ensure text readability */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[#FAF9F6]/95 via-[#FAF9F6]/80 to-[#FAF9F6]/40 backdrop-blur-[2px]"></div>
+          {/* Gradient overlay to ensure text readability while keeping image visible */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#FAF9F6]/80 via-[#FAF9F6]/70 to-[#FAF9F6] backdrop-blur-[1px]"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -178,10 +178,10 @@ export function Home() {
               { num: '02', title: 'Premium Vendors', desc: 'Exclusive access to top-tier local vendors, venues, and caterers in Niger State.' },
               { num: '03', title: 'Stress-Free', desc: 'You enjoy the party while our dedicated coordinators handle the logistics behind the scenes.' }
             ].map((feature, i) => (
-              <div key={i} className="bento-item bg-white/5 border border-white/10 p-8 flex flex-col items-center hover:bg-white/10 transition-colors">
-                <span className="font-serif text-5xl text-secondary opacity-80 mb-6">{feature.num}</span>
-                <h3 className="text-xl font-bold mb-4">{feature.title}</h3>
-                <p className="text-purple-200 text-sm leading-relaxed max-w-xs">{feature.desc}</p>
+              <div key={i} className="bento-item bg-[#ddafe5] border border-white/20 p-8 flex flex-col items-center hover:brightness-95 transition-all shadow-lg text-center">
+                <span className="font-serif text-5xl text-primary opacity-90 mb-6">{feature.num}</span>
+                <h3 className="text-xl font-bold mb-4 text-[#c5a059]">{feature.title}</h3>
+                <p className="text-slate-800 font-medium text-sm leading-relaxed max-w-xs">{feature.desc}</p>
               </div>
             ))}
           </div>
