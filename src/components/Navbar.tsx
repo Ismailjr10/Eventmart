@@ -22,7 +22,7 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <Link to="/" className="flex items-center space-x-2">
-            <img src="/logo.png.webp" alt="EventMart Logo" className="h-12 w-auto object-contain drop-shadow-sm" />
+            <img src="/logo.webp" alt="EventMart Logo" className="h-12 w-auto object-contain drop-shadow-sm" />
             <div className="flex flex-col">
               <span className="font-serif text-2xl font-bold text-primary leading-none tracking-tight">EventMart</span>
               <span className="text-[0.6rem] font-medium tracking-widest text-slate-500 uppercase">Where Every Event Shines</span>
